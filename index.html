@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Captioning | Deep Learning Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>AI Image <span>Captioning</span></h1>
+            <p>Upload an image and let our Deep Learning model generate a description.</p>
+        </header>
+
+        <main class="glass-panel">
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Drag & Drop your image here</h3>
+                <p>or</p>
+                <button class="btn" id="browse-btn">Browse Files</button>
+            </div>
+
+            <div class="preview-area hidden" id="preview-section">
+                <div class="image-wrapper">
+                    <img id="image-preview" src="" alt="Image Preview">
+                </div>
+                
+                <div class="result-section">
+                    <div class="loader hidden" id="loader">
+                        <div class="spinner"></div>
+                        <p>Analyzing image features...</p>
+                    </div>
+                    
+                    <div class="caption-box hidden" id="caption-box">
+                        <h3>Generated Caption</h3>
+                        <p id="caption-text"></p>
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary" id="reset-btn">Upload Another Image</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Final Year Major Project • Generated with CNN & LSTM</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
