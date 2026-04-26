@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "C:\Users\HP PC\OneDrive\Desktop\image-captioning-project\temp.py", line 5, in <module>
+    load_model('models/model_19.h5')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\saving\saving_api.py", line 196, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        filepath,
+        ^^^^^^^^^
+    ...<2 lines>...
+        safe_mode=safe_mode,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 137, in load_model_from_hdf5
+    model = saving_utils.model_from_config(
+        model_config, custom_objects=custom_objects
+    )
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\legacy\saving\saving_utils.py", line 83, in model_from_config
+    return serialization.deserialize_keras_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<2 lines>...
+        printable_module_name="layer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\legacy\saving\serialization.py", line 488, in deserialize_keras_object
+    deserialized_obj = cls.from_config(
+        cls_config,
+    ...<3 lines>...
+        },
+    )
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\models\model.py", line 823, in from_config
+    return functional_from_config(
+        cls, config, custom_objects=custom_objects
+    )
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\models\functional.py", line 561, in functional_from_config
+    process_layer(layer_data)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\models\functional.py", line 524, in process_layer
+    layer = saving_utils.model_from_config(
+        layer_data, custom_objects=custom_objects
+    )
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\legacy\saving\saving_utils.py", line 83, in model_from_config
+    return serialization.deserialize_keras_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        config,
+        ^^^^^^^
+    ...<2 lines>...
+        printable_module_name="layer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\legacy\saving\serialization.py", line 472, in deserialize_keras_object
+    (cls, cls_config) = class_and_config_for_serialized_keras_object(
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        config, module_objects, custom_objects, printable_module_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\HP PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\legacy\saving\serialization.py", line 353, in class_and_config_for_serialized_keras_object
+    raise ValueError(
+    ...<5 lines>...
+    )
+ValueError: Unknown layer: 'NotEqual'. Please ensure you are using a `keras.utils.custom_object_scope` and that this object is included in the scope. See https://www.tensorflow.org/guide/keras/save_and_serialize#registering_the_custom_object for details.
